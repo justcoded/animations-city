@@ -1,0 +1,350 @@
+.clouds{
+	.clouds-inner{
+		@include animate(opacity, 0.3s);
+		.night7 &{
+			opacity: 0;
+		}
+	}
+	.cloud{
+		position: absolute;
+		height: auto;
+		opacity: 1;
+		z-index: 1;
+		&.cloud1{
+			width: 11.7%;
+			top: 17%;
+			left: 1.5%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 5%;
+			}
+		}
+		&.cloud2{
+			width: 7.8%;
+			top: 25%;
+			left: 5.5%;
+			@include media('<tablet') {
+				width: 20%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 4%;
+			}
+		}
+		&.cloud3{
+			width: 10.7%;
+			top: 23%;
+			left: 11%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 5%;
+			}
+		}
+		&.cloud4{
+			width: 19.8%;
+			top: 13%;
+			left: 31%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 10%;
+			}
+		}
+		&.cloud5{
+			width: 24%;
+			top: 8%;
+			left: 46%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 12%;
+			}
+		}
+		&.cloud6{
+			width: 20.3%;
+			top: 12%;
+			left: 69%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 10%;
+			}
+		}
+		&.cloud7{
+			width: 16.9%;
+			top: 27%;
+			left: 86%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 8%;
+			}
+		}
+		&.cloud8{
+			width: 8.9%;
+			top: 43%;
+			left: 0;
+			@include media('<tablet') {
+				width: 23%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 4%;
+			}
+		}
+		&.cloud9{
+			width: 9.4%;
+			top: 45%;
+			left: 4%;
+			@include media('<tablet') {
+				width: 27%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 5%;
+			}
+		}
+		&.cloud10{
+			width: 17.45%;
+			top: 36%;
+			left: 12%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 9%;
+			}
+		}
+		&.cloud11{
+			width: 9.4%;
+			top: 38%;
+			left: 29%;
+			@include media('<tablet') {
+				width: 21%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 5%;
+			}
+		}
+		&.cloud12{
+			width: 9.4%;
+			top: 40%;
+			left: 34%;
+			@include media('<tablet') {
+				width: 22%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 5%;
+			}
+		}
+		&.cloud13{
+			width: 8.9%;
+			top: 34%;
+			left: 52%;
+			@include media('<tablet') {
+				width: 23%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 4%;
+			}
+		}
+		&.cloud14{
+			width: 11.5%;
+			top: 32%;
+			left: 69%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 5%;
+			}
+		}
+		&.cloud15{
+			width: 10.7%;
+			top: 48%;
+			left: 67%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 6%;
+			}
+		}
+		&.cloud16{
+			width: 12%;
+			top: 47%;
+			left: 84%;
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 6%;
+			}
+		}
+		&.cloud17{
+			width: 7.8%;
+			top: 45%;
+			left: 92%;
+			@include media('<tablet') {
+				width: 25%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 4%;
+			}
+		}
+		&.cloud18{
+			width: 8.9%;
+			top: 49%;
+			left: 95%;
+			@include media('<tablet') {
+				width: 28%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 4%;
+			}
+		}
+		&.cloud19{
+			width: 9.4%;
+			top: 62%;
+			left: 73%;
+			@include media('<tablet') {
+				width: 27%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 5%;
+			}
+		}
+		&.cloud20{
+			width: 9.4%;
+			top: 65%;
+			left: 77%;
+			@include media('<tablet') {
+				width: 30%;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 5%;
+			}
+		}
+		@for $i from 1 through 5 {
+			&.cloud#{$i}{
+				animation: cloud#{$i} random(100) + 50 + s infinite;
+			}
+			@keyframes cloud#{$i} {
+				0% {
+					transform: translateX(random(100) + %);
+					opacity: 0;
+				}
+				15% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateX(random(100) + %);
+					opacity: 0;
+				}
+			}
+		}
+	}
+	.ferris-cabin{
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 40px;
+		}
+		&.hide{
+			display: none;
+		}
+		.night8 &{
+			filter: grayscale(90%);
+		}
+	}
+}
+.sun{
+	@include animate(transform background);
+	width: 12vw;
+	height: 12vw;
+	border-radius: 50%;
+	background: #f6b035;
+	position: absolute;
+	top: 5%;
+	left: 87%;
+	z-index: 0;
+	transform: translateX(0);
+	@include media('<tablet') {
+		width: 20vw;
+		height: 20vw;
+	}
+	@media (max-height: 800px) and (min-width: 768px){
+		width: 75px;
+		height: 75px;
+	}
+	.night1 &{
+		background: #de712b;
+	}
+}
+.moon{
+	@include animate(transform);
+	width: 12vw;
+	height: 12vw;
+	border-radius: 50%;
+	position: absolute;
+	top: 5%;
+	left: 200%;
+	z-index: 0;
+	background: url(../images/moon.png) no-repeat 50%/cover;
+	transform: translateX(0);
+	@include media('<tablet') {
+		width: 20vw;
+		height: 20vw;
+		right: -154px;
+	}
+	@media (max-height: 800px) and (min-width: 768px){
+		width: 75px;
+		height: 75px;
+	}
+}
+.plane{
+	@include animate(all, 10s, linear);
+	width: 50px;
+	position: absolute;
+	top: 5%;
+	left: -50px;
+	z-index: 0;
+	@include media('<tablet') {
+		display: none;
+	}
+	&:before{
+		@include animate(opacity, 3s);
+		content: '';
+		position: absolute;
+		top: 43%;
+		right: 81%;
+		width: 110vw;
+		height: 15%;
+		background: rgba(255, 255, 255, 0.5);
+		box-shadow: 0 0 15px #fff;
+		z-index: -2;
+		.night2 &{
+			background: rgba(113, 113, 113, 0.5);
+			box-shadow: 0 0 15px #777474;
+		}
+	}
+	&.fly{
+		left: 100%;
+		width: 150px;
+	}
+	&.hide{
+		&:before{
+			opacity: 0;
+		}
+	}
+	.plane-img{
+		width: 100%;
+		height: auto;
+		.night2 &{
+			filter: grayscale(90%);
+		}
+	}
+}

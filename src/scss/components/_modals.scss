@@ -1,0 +1,199 @@
+$modals: (
+  'zindex-modal': 13050,
+  'zindex-modal-background': 1040,
+  'modal-content-bg': #fff,
+  'modal-backdrop-bg': rgba(0, 0, 0, .4),
+  'modal-content-border-color': transparent,
+  'border-radius-large': 0,
+  'modal-title-padding': 80px 20px 20px,
+  'modal-inner-padding': 20px,
+  'modal-header-border-color': transparent,
+  'modal-title-line-height': 1.2,
+  'modal-footer-border-color': transparent,
+  'modal-backdrop-opacity': .5,
+  'modal-lg': 700px,
+  'modal-md': 700px,
+  'modal-sm': 300px,
+  'brend-color-light': #f48058
+  );
+.modal-open {
+  overflow: hidden;
+}
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-right: 0 !important;
+  z-index: map-get($modals, 'zindex-modal');
+  -webkit-overflow-scrolling: touch;
+  background: rgba(0, 0, 0, .3);
+  outline: 0;
+  @include media('<tablet') {
+    background: transparent;
+  }
+  &.fade .modal-dialog {
+    @include animate(transform, 0.2s, ease-in);
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity .15s linear;
+    @include media('<tablet') {
+      top: 69px;
+    }
+  }
+  &.in .modal-dialog {
+    @include animate(transform, 0.2s, ease-in);
+    opacity: 1;
+  }
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.fade {
+  opacity: 0;
+  transition: opacity .15s linear;
+  &.in{
+    opacity: 1;
+  }
+}
+.modal-dialog {
+  position: absolute;
+  width: 90%;
+  margin: 0 0 30px;
+}
+.modal-content {
+  position: relative;
+  background-color: map-get($modals, 'modal-content-bg');
+  border: 0 solid map-get($modals, 'modal-content-border-color');
+  border-radius: map-get($modals, 'border-radius-large');
+  background-clip: padding-box;
+  outline: 0;
+  transform: translate3d(0, 0, 0);
+  padding: 39px 59px 57px 57px;
+  @include media('<tablet') {
+    padding: 40px 20px 30px;
+  }
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: map-get($modals, 'zindex-modal-background');
+  background-color: map-get($modals, 'modal-backdrop-bg');
+  &.fade {
+    opacity: 0;
+  }
+  &.in {
+    opacity: map-get($modals, 'modal-backdrop-opacity');
+  }
+}
+.modal-dialog .close {
+  @include animate(color);
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ff766c;
+  font-size: 40px;
+  padding: 5px;
+  line-height: 15px;
+  outline: none;
+  @include media('<tablet') {
+    top: 10px;
+    right: 10px;
+  }
+  &:hover{
+    color: #008b8b;
+  }
+}
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+.modal-title{
+  text-align: center;
+  margin: 0 0 25px;
+  .title-inner{
+    font-size: 35px;
+    color: #008b8b;
+    display: inline-block;
+    position: relative;
+    padding: 0 0 0 40px;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 35px;
+      height: 42px;
+      background: url(../images/egg.svg) no-repeat 50%/cover;
+    }
+  }
+}
+.modal-list{
+  @extend %listreset;
+  font-size: 21px;
+  line-height: 1.5;
+  li{
+    position: relative;
+    margin: 0 0 10px;
+    padding: 0 0 0 40px;
+    &:nth-child(2){
+      &:before{
+        background-image: url(../images/fw-ico.svg);
+        height: 36px;
+      }
+    }
+    &:last-child{
+      &:before{
+        content: 'DBC';
+        background: green;
+        font-size: 14px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      background: url(../images/cabin.svg) no-repeat 0 0;
+    }
+  }
+  p{
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: map-get($modals, 'modal-lg');
+    margin: 45px auto;
+  }
+  .modal-sm { width: map-get($modals, 'modal-sm'); }
+}
+
+@media (min-width: 1024px) {
+  .modal-dialog {
+    width: map-get($modals, 'modal-lg');
+  }
+  .modal-lg {
+    width: map-get($modals, 'modal-lg');
+  }
+}

@@ -1,0 +1,276 @@
+.road-holder{
+	border-top: 0.8vw solid #364040;
+	box-shadow: 0 -0.8vw 0 #a2a8a9;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 17.97vw;
+	@include media('<desktop') {
+		height: 7.8vw;
+	}
+	@include media('<tablet') {
+		height: 20vw;
+	}
+	@media (max-height: 800px) and (min-width: 768px){
+		border-top: 0.3vw solid #364040;
+		box-shadow: 0 -0.3vw 0 #a2a8a9;
+		height: 5.2vw;
+	}
+	.road{
+		background: #364040;
+		border: 0.8vw solid #788082;
+		border-width: 0.8vw 0;
+		height: 7.8vw;
+		position: relative;
+		@include media('<tablet') {
+			height: 19.5vw;
+		}
+		@media (max-height: 800px) and (min-width: 768px){
+			border: 0.3vw solid #788082;
+			border-width: 0.3vw 0;
+			height: 5vw;
+		}
+		&:before, &:after{
+			content: '';
+			background: #fade5a;
+			width: 100%;
+			height: 0.35vw;
+			position: absolute;
+			top: 42%;
+			left: 0;
+			@include media('<tablet') {
+				height: 0.7vw;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				height: 0.2vw;
+			}
+		}
+		&:after{
+			top: auto;
+			bottom: 42%;
+		}
+		&.bottom{
+			@include media('<desktop') {
+				display: none;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				display: none;
+			}
+		}
+		.traffic-light{
+			position: absolute;
+			bottom: 100%;
+			left: 15px;
+			width: 3%;
+			z-index: 6;
+			margin-bottom: 5%;
+			@include media('<tablet') {
+				width: 7%;
+				margin-bottom: 90px;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 2%;
+			}
+			.section-red{
+				@include animate(fill, 0.3s);
+			}
+			&.active{
+				.section-green{
+					animation-name: tl-green-on;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+				}
+				.section-yellow{
+					animation-name: tl-yellow-on;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+				}
+				.section-red{
+					fill: grey;
+				}
+			}
+			&.off{
+				.section-green{
+					animation-name: tl-green-off;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+				}
+				.section-yellow{
+					animation-name: tl-yellow-off;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+				}
+				.section-red{
+					animation-name: tl-red-off;
+					animation-duration: 1s;
+					animation-fill-mode: forwards;
+				}
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 15%;
+				height: 5.3vw;
+				background: #000;
+				margin-top: -15px;
+				z-index: -1;
+				@include media('<tablet') {
+					height: 100px;
+				}
+			}
+			svg{
+				width: 100%;
+				max-height: 84px;
+			}
+		}
+		.tree{
+			@include animate(filter);
+			position: absolute;
+			width: 4.17%;
+			bottom: 100%;
+			margin-bottom: 2.4%;
+			@include media('<tablet') {
+				display: none;
+				width: 15%;
+				margin-bottom: 0;
+			}
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 3%;
+				margin-bottom: 0.9%;
+			}
+			.night8 &{
+				filter: grayscale(90%);
+			}
+			&.tree1{
+				right: 22%;
+				z-index: 3;
+				@include media('<tablet') {
+					display: block;
+					right: 75%;
+				}
+			}
+			&.tree2{
+				width: 9.27%;
+				right: 11%;
+				@media (max-height: 800px) and (min-width: 768px){
+					width: 6%;
+				}
+			}
+			&.tree3{
+				right: 11%;
+			}
+			&.tree4{
+				right: 7%;
+			}
+			&.tree5{
+				right: 5%;
+			}
+			&.tree6{
+				width: 9.27%;
+				right: -2%;
+				@media (max-height: 800px) and (min-width: 768px){
+					width: 6%;
+				}
+			}
+			&.tree7{
+				right: -2%;
+			}
+		}
+	}
+	.green-line{
+		@include animate(background);
+		background: #4c8e41;
+		height: 1.55vw;
+		position: relative;
+		@include media('<desktop') {
+			display: none;
+		}
+		@media (max-height: 800px) and (min-width: 768px){
+			height: 0.5vw;
+		}
+		.night8 &{
+			background: #5e735b;
+		}
+		.tree{
+			@include animate(filter);
+			position: absolute;
+			bottom: 41%;
+			width: 4.17%;
+			z-index: 9;
+			@media (max-height: 800px) and (min-width: 768px){
+				width: 3%;
+			}
+			.night8 &{
+				filter: grayscale(90%);
+			}
+			&.tree1{
+				left: 18%;
+			}
+			&.tree2{
+				left: 41%;
+			}
+			&.tree3{
+				left: 70%;
+			}
+		}
+	}
+}
+@keyframes tl-yellow-on{
+	0%{
+		fill: grey;
+	}
+	50%{
+		fill: #e0a90e;
+	}
+	100%{
+		fill: grey;
+	}
+}
+@keyframes tl-green-on{
+	0%{
+		fill: grey;
+	}
+	50%{
+		fill: grey;
+	}
+	100%{
+		fill: #88c057;
+	}
+}
+@keyframes tl-yellow-off{
+	0%{
+		fill: grey;
+	}
+	50%{
+		fill: #e0a90e;
+	}
+	100%{
+		fill: grey;
+	}
+}
+@keyframes tl-green-off{
+	0%{
+		fill: #88c057;
+	}
+	50%{
+		fill: grey;
+	}
+	100%{
+		fill: grey;
+	}
+}
+@keyframes tl-red-off{
+	0%{
+		fill: grey;
+	}
+	50%{
+		fill: grey;
+	}
+	100%{
+		fill: #ed7161;
+	}
+}

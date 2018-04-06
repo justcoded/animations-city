@@ -1,0 +1,157 @@
+body{
+	@include animate(background, 0.3s);
+	position: relative;
+	height: 100vh;
+    overflow: hidden;
+    &.day{
+        background: #9dd7cf;
+    }
+}
+#wrapper{
+	height: 100%;
+    overflow: hidden;
+	position: relative;
+    &:before{
+        @include animate(transform);
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 200%;
+        background: linear-gradient(to bottom, #9dd7cf 0%,#5b90a2 50%,#032048 100%);
+        .night1 &{
+            transform: translateY(-50%);
+        }
+        .night4 &{
+            transform: translateY(-100%);
+        }
+    }
+}
+.info-btn{
+    @include animate(opacity);
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    border-radius: 50%;
+    outline: none;
+    opacity: .7;
+    animation: bounceInfo 1s ease-in-out infinite;
+    z-index: 10;
+    &:hover{
+        opacity: 1;
+    }
+}
+.scroll-down{
+    @include animate(transform opacity visibility);
+    display: block;
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 135px;
+    height: 60px;
+    animation: scrollDown 1s infinite;
+    z-index: 10;
+    background: rgba(#364040, .8);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: content-box;
+    @media (max-width: 1024px){
+        width: 60px;
+        height: 60px;
+    }
+    img{
+        width: 60px;
+        display: inline-block;
+        vertical-align: middle;
+        @media (max-width: 1024px){
+            display: none;
+        }
+    }
+    span{
+        color: #fff;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 60px;
+        @media (max-width: 1024px){
+            display: none;
+        }
+    }
+    &.hide{
+        opacity: 0;
+        visibility: hidden;
+    }
+    &:before{
+        content: "";
+        background: url(../images/scroll.svg) no-repeat 0 0;
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 100px;
+        height: 100px;
+        @media (max-width: 1024px){
+            background-image: url(../images/swipe.svg);
+            top: 8px;
+            left: 15px;
+            width: 30px;
+            height: 45px;
+        }
+    }
+}
+*::selection{
+    background: rgba(#008b8b, .6);
+}
+.sound{
+    @include animate(opacity);
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    opacity: .7;
+    z-index: 10;
+    @include media('<tablet') {
+        display: none;
+    }
+    &:hover{
+        opacity: 1;
+    }
+    .sound-ico{
+        cursor: pointer;
+    }
+    .audio{
+        display: none;
+        position: fixed;
+        top: -100%;
+        left: 0;
+    }
+}
+@keyframes bounceInfo {
+    0% {
+        box-shadow: 0 0 5px #000;
+    }
+    50% {
+        box-shadow: 0 0 0 #000;
+    }
+    100% {
+        box-shadow: 0 0 5px #000;
+    }
+}
+@keyframes scrollDown {
+    0% {
+        bottom: 45px;
+    }
+    50% {
+        bottom: 35px;
+    }
+    100% {
+        bottom: 45px;
+    }
+}

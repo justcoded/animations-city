@@ -1,0 +1,132 @@
+.ferris-holder{
+	@include animate(filter);
+	position: absolute;
+	bottom: 18.75vw;
+	right: 13%;
+	font-size: 0;
+	z-index: 2;
+	@include media('<desktop') {
+		bottom: 8.5vw;
+	}
+	@include media('<tablet') {
+		display: none;
+	}
+	@media (max-height: 800px) and (min-width: 768px){
+		bottom: 5.1vw;
+	}
+	.night8 &{
+		filter: grayscale(90%);
+	}
+}
+.ferris-base{
+	width: 24.5vw;
+	position: relative;
+	z-index: 1;
+	@media (max-height: 800px) and (min-width: 768px){
+		width: 270px;
+	}
+}
+.ferris-wheel{
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	.img-holder{
+		position: absolute;
+		bottom: -14.85vw;
+		left: 50%;
+		margin-left: -14.35vw;
+		@media (max-height: 800px) and (min-width: 768px){
+			bottom: -170px;
+			margin-left: -165px;
+		}
+	}
+	.img-inner{
+		position: relative;
+		animation: ferris 50s linear infinite;
+		width: 28.65vw;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 330px;
+		}
+		.ferris-img{
+			width: 100%;
+		}
+	}
+	.ferris-cabin{
+		max-width: 3.15vw;
+		max-height: 63px;
+		position: absolute;
+		transform-origin: 50% 10px;
+		animation: cabin 50s linear infinite;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 40px;
+		}
+		&.cabin1{
+			top: 1%;
+			left: 44.5%;
+		}
+		&.cabin2{
+			top: 15%;
+			right: 11%;
+		}
+		&.cabin3{
+			top: 48%;
+			right: -2.5%;
+		}
+		&.cabin4{
+			bottom: 8%;
+			right: 11.5%;
+		}
+		&.cabin5{
+			bottom: -6%;
+			left: 44.5%;
+		}
+		&.cabin6{
+			bottom: 8%;
+			left: 11.5%;
+		}
+		&.cabin7{
+			top: 48%;
+			left: -2.5%;
+		}
+		&.cabin8{
+			top: 15%;
+			left: 11%;
+		}
+	}
+}
+@keyframes ferris {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes cabin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}

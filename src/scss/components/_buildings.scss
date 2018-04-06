@@ -1,0 +1,305 @@
+.buildings{
+	position: absolute;
+	bottom: 17.7vw;
+	left: 0;
+	width: 100%;
+	@include media('<desktop') {
+		bottom: 8.1vw;
+	}
+	@include media('<tablet') {
+		bottom: 19vw;
+	}
+	@media (max-height: 800px) and (min-width: 768px){
+		bottom: 5vw;
+	}
+	.buildings-inner{
+		position: relative;
+	}
+}
+.building{
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	@include media('<tablet') {
+		display: none;
+	}
+	&.building1{
+		width: 12.87%;
+		left: 0.3%;
+		@include media('<tablet') {
+			display: block;
+			left: -8%;
+			width: 50%;
+			z-index: 1;
+		}
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 10%;
+		}
+		.st0{
+			fill:#CE72AD;
+			.night5 &{
+				fill: #3d444c;
+			}
+		}
+		.st1{
+			fill:#A44A93;
+			.night5 &{
+				fill: #333940;
+			}
+		}
+		.st2{
+			fill:#C5E6E6;
+			.night5 &{
+				fill: #d8d897;
+			}
+		}
+		.st3{opacity:0.3;fill:#231F20;}
+	}
+	&.building2{
+		width: 20.31%;
+		left: 11%;
+		z-index: 3;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 10%;
+		}
+		.st0{
+			fill:#8165AC;
+			.night5 &{
+				fill: #3d444c;
+			}
+		}
+		.st1{opacity:0.3;fill:#231F20;}
+		.st2{
+			fill:#C5E6E6;
+			.night5 &{
+				fill: #d8d897;
+			}
+		}
+		.st3{
+			fill:#554372;
+			.night5 &{
+				fill: #333940;
+			}
+		}
+	}
+	&.building3{
+		width: 15.78%;
+		left: 29.8%;
+		z-index: 2;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 11%;
+		}
+		.st0{
+			fill:#F79655;
+			.night5 &{
+				fill: #3d444c;
+			}
+		}
+		.st1{opacity:0.1;fill:#231F20;}
+		.st2{
+			@include animate(fill, 0.3s);
+			fill:#B76E37;
+			.night5 &{
+				fill: #333940;
+			}
+		}
+		.st3{
+			fill:#C5E6E6;
+			.night5 &{
+				fill: #d8d897;
+			}
+		}
+		.st4{opacity:0.3;fill:#231F20;}
+	}
+	&.building4{
+		width: 21.57%;
+		left: 47.9%;
+		z-index: 2;
+		@include media('<desktop') {
+			display: none;
+		}
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 14%;
+		}
+		.st0{
+			fill:#67C8CF;
+			.night5 &{
+				fill: #3d444c;
+			}
+		}
+		.st1{opacity:0.3;fill:#231F20;}
+		.st2{
+			fill:#438185;
+			.night5 &{
+				fill: #333940;
+			}
+		}
+		.st3{
+			fill:#CEE5E3;
+			.night5 &{
+				fill: #d8d897;
+			}
+		}
+	}
+	&.building5{
+		width: 4.65%;
+		left: 14.5%;
+		@include media('<tablet') {
+			display: block;
+			visibility: hidden;
+		}
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 2.5%;
+		}
+		.st0{
+			fill:#CEC465;
+			.night3 &{
+				fill: #3d444c;
+			}
+		}
+		.st1{
+			fill:#C5E6E6;
+			.night3 &{
+				fill: #d8d897;
+			}
+		}
+		.st2{
+			fill:#9F974C;
+			.night3 &{
+				fill: #3d444c;
+			}
+		}
+		.plane-btn{
+			@include animate(all);
+			position: absolute;
+			top: 15%;
+			left: 0;
+			display: block;
+			background: green;
+			color: #fff;
+			width: 100%;
+			text-align: center;
+			transform-origin: 100% 0;
+			cursor: default;
+			border: 1px solid;
+			user-select: none;
+			@media (max-height: 800px) and (min-width: 768px){
+				font-size: 8px;
+			}
+			&.active{
+				animation: broken 10s both !important;
+				background: green !important;
+				color: #fff !important;
+				.night1 &{
+					background: #4f614f !important;
+				}
+			}
+			.night1 &{
+				animation: colors 5s infinite;
+				background: #3d444c;
+				border: 1px solid;
+			}
+		}
+	}
+	&.building6{
+		width: 8.7%;
+		left: 24.2%;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 5%;
+		}
+		.st0{
+			fill:#5FBE7B;
+			.night3 &{
+				fill: #3d444c;
+			}
+		}
+		.st1{
+			fill:#CEE5E3;
+			.night3 &{
+				fill: #d8d897;
+			}
+		}
+		.st2{
+			fill:#368350;
+			.night3 &{
+				fill: #333940;
+			}
+		}
+	}
+	&.building7{
+		width: 9.5%;
+		left: 40%;
+		@include media('<tablet') {
+			display: block;
+			left: 63%;
+			width: 35%;
+		}
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 7%;
+		}
+		.st0{
+			fill:#F05364;
+			.night3 &{
+				fill: #3d444c;
+			}
+		}
+		.st1{
+			fill:#9F323E;
+			.night3 &{
+				fill: #333940;
+			}
+		}
+		.st2{
+			fill:#83CECD;
+			.night3 &{
+				fill: #d8d897;
+			}
+		}
+	}
+	svg{
+		overflow: visible;
+	}
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+@keyframes broken {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(-70deg);
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		top: 100%;
+		transform: rotate(-70deg);
+	}
+}
+@keyframes colors {
+	0% {
+		color: red;
+	}
+	20% {
+		color: orange;
+	}
+	40% {
+		color: yellow;
+	}
+	60% {
+		color: green;
+	}
+	80% {
+		color: cyan;
+	}
+	90% {
+		color: blue;
+	}
+	100% {
+		color: purple;
+	}
+}

@@ -1,0 +1,234 @@
+.car-wrap{
+	@include animate(transform left);
+	position: absolute;
+	height: auto;
+	transform: translateX(0);
+	@include media('<tablet') {
+		display: none;
+	}
+	.car-light{
+		display: none;
+		position: absolute;
+		top: 61%;
+		right: 99%;
+		width: 10vw;
+		filter: none !important;
+		@include media('<tablet') {
+			width: 20vw;
+		}
+		.night6 &{
+			display: block;
+		}
+	}
+	.night6 .road.top &{
+        &.car7{
+        	.car-light{
+        		top: 65%;
+        		right: 98%;
+        	}
+        }
+	}
+	.night6 .road.bottom &{
+		.car-light{
+			right: auto;
+			left: 99%;
+			transform: scale(-1, 1);
+			.night6 &{
+				display: block;
+			}
+		}
+        &.car1{
+            .car-light{
+                top: 65%;
+            }
+        }
+        &.car2{
+            .car-light{
+                top: 63%;
+            }
+        }
+	}
+	&.car1{
+		width: 17.2%;
+		top: -77%;
+		left: 0;
+		z-index: 10;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 10%;
+			top: -53%;
+		}
+		.img-wheel{
+			width: 13.7%;
+			position: absolute;
+			&.first{
+				top: 89%;
+				left: 6%;
+			}
+			&.second{
+				top: 89%;
+				left: 43.5%;
+			}
+			&.third{
+				top: 89%;
+				left: 71%;
+			}
+		}
+	}
+	&.car2{
+		width: 13.45%;
+		top: -93%;
+		left: 23%;
+		z-index: 9;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 7%;
+			top: -67%;
+		}
+		.img-wheel{
+			width: 19.4%;
+			position: absolute;
+			&.first{
+				top: 82%;
+				left: 10%;
+			}
+			&.second{
+				top: 82%;
+				left: 66%;
+			}
+		}
+	}
+	&.car3{
+		width: 11.2%;
+		top: -2%;
+		left: 36%;
+		z-index: 10;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 6%;
+			top: 21%;
+		}
+		.img-wheel{
+			width: 18.7%;
+			position: absolute;
+			&.first{
+				top: 77%;
+				left: 12%;
+			}
+			&.second{
+				top: 77%;
+				left: 60%;
+			}
+		}
+	}
+	&.car4{
+		width: 11.2%;
+		top: 6%;
+		left: 47%;
+		z-index: 9;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 6%;
+			top: 13%;
+		}
+		.img-wheel{
+			width: 18.7%;
+			position: absolute;
+			&.first{
+				top: 75%;
+				left: 22%;
+			}
+			&.second{
+				top: 75%;
+				left: 68%;
+			}
+		}
+	}
+	&.car5{
+		width: 11.2%;
+		top: -52%;
+		left: 54%;
+		z-index: 7;
+		@include media('<tablet') {
+			display: block;
+			width: 35%;
+			top: -70%;
+		}
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 6%;
+		}
+		.img-wheel{
+			width: 18.7%;
+			position: absolute;
+			&.first{
+				top: 76%;
+				left: 22%;
+			}
+			&.second{
+				top: 76%;
+				left: 68%;
+			}
+		}
+	}
+	&.car6{
+		width: 13.55%;
+		top: -83%;
+		left: 69%;
+		z-index: 7;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 7%;
+			top: -69%;
+		}
+		.img-wheel{
+			width: 19.4%;
+			position: absolute;
+			&.first{
+				top: 77%;
+				left: 18%;
+			}
+			&.second{
+				top: 77%;
+				left: 72%;
+			}
+		}
+	}
+	&.car7{
+		width: 22.4%;
+		top: -82%;
+		left: 80%;
+		z-index: 8;
+		@media (max-height: 800px) and (min-width: 768px){
+			width: 11%;
+		}
+		.img-wheel{
+			width: 11%;
+			position: absolute;
+			&.first{
+				top: 87%;
+				left: 11%;
+			}
+			&.second{
+				top: 87%;
+				left: 29%;
+			}
+			&.third{
+				top: 87%;
+				left: 41%;
+			}
+			&.fourth{
+				top: 87%;
+				left: 73%;
+			}
+			&.fifth{
+				top: 87%;
+				left: 85%;
+			}
+		}
+	}
+	img{
+		@include animate(filter);
+		width: 100%;
+		.night2 &{
+			filter: grayscale(90%);
+		}
+	}
+	.img-wheel{
+		@include animate(transform);
+	}
+}
